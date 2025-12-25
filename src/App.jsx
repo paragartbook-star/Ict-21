@@ -419,7 +419,7 @@ const App = () => {
         <div className="flex items-center justify-between mb-4">
           <div>
             <h1 className={`text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent`}>
-              📈 ICT Advanced Market Analyzer 2025
+              Ecoplus Analyzer v.1169
             </h1>
             <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
               AI-Powered Trading Intelligence | Real-time Market Analysis | Institutional Grade Tools
