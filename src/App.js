@@ -29,6 +29,29 @@ import {
   Minimize2,
 } from "lucide-react";
 
+import React, { useState, useEffect } from 'react'; // 1. Check karein useEffect import hai
+
+function App() {
+  // 2. Aapki purani state
+  const [darkMode, setDarkMode] = useState(false); 
+
+  // 3. YE WALA CODE YAHAN PASTE KAREIN
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  return (
+    // 4. Main div mein ye classes check karein
+    <div className={darkMode ? "bg-slate-900 text-white" : "bg-white text-black"}>
+      {/* Aapka dashboard ka saara code */}
+    </div>
+  );
+}
+
 const App = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [selectedMarket, setSelectedMarket] = useState("Stocks");

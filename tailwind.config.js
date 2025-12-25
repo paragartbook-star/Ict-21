@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
+  darkMode: 'class', // Ye ensure karta hai ki 'dark' class lagne par theme badle
   content: [
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // Yahan aap apne ICT dashboard ke custom colors bhi daal sakte hain
+    },
   },
   plugins: [],
-  darkMode: 'class',  // ये जरूरी है आपके darkMode state के लिए
 }
