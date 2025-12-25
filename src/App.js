@@ -53,6 +53,16 @@ function App() {
 }
 
 const App = () => {
+
+  // Sirf ye hissa paste karein hooks ke turant baad (Line 54 ke paas)
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   const [currentTime, setCurrentTime] = useState(new Date());
   const [selectedMarket, setSelectedMarket] = useState("Stocks");
   const [sortBy, setSortBy] = useState("Total Score");
