@@ -38,7 +38,7 @@ const App = () => {
   const [priceUpdates, setPriceUpdates] = useState({});
   
   // NEW: Generate sectors for filtering
-  const sectors = ['All', 'AI/Semiconductors', 'Cloud/AI', 'FinTech', 'Biotech', 'Clean Energy', 'EV/Energy', 'Social/VR'];
+  const sectors = ['All', 'AI/Semiconductors', 'Cloud/AI', 'FinTech', 'Biotech', 'Clean Energy', 'EV/Energy', 'Social/VR', 'Energy/Retail', 'Banking', 'Telecom', 'IT Services', 'NBFC', 'Engineering', 'Insurance', 'FMCG', 'FMCG/Cigarettes', 'Automobile', 'Pharma', 'Conglomerate', 'Power', 'Consumer Goods', 'Cement', 'Oil & Gas', 'Paints', 'Infrastructure', 'Mining', 'Financial Services', 'Defense', 'Steel', 'Capital Goods', 'Retail', 'Internet', 'Beverages', 'Cement/Textile', 'Finance', 'Real Estate', 'Aviation', 'Gas', 'Electricals', 'Chemicals', 'Metals', 'Renewable', 'Auto Parts', 'Explosives', 'Healthcare', 'Shipbuilding', 'IT', 'Textile', 'Blockchain', 'Smart Contract', 'Stablecoin', 'Payment', 'Exchange Token', 'Meme', 'Oracle', 'Interoperability', 'Exchange', 'L1 Blockchain', 'Layer 2', 'DEX', 'Web3', 'Privacy', 'Bitcoin L2', 'AI/DePIN', 'AI', 'Enterprise', 'Storage', 'Gaming', 'DeFi', 'Supply Chain', 'Web3 Indexing', 'Major', 'Minor', 'Exotic'];
 
   // Simulated real-time data with 2025 features
   const generateAdvancedData = () => {
