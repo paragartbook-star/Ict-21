@@ -251,7 +251,7 @@ const App = () => {
     ];
 
     return top21Stocks.map((stock, idx) => {
-      const basePrice = 100 + idx * 50;
+      const basePrice = (100 + idx * 50) * 85;
       const priceChange = (Math.random() - 0.5) * 10;
       const newPrice = basePrice + priceChange;
       const changePercent = ((priceChange / basePrice) * 100).toFixed(2);
@@ -555,7 +555,7 @@ const App = () => {
               <div key={idx} className="flex justify-between items-center py-1">
                 <span className="font-medium">{stock.symbol}</span>
                 <span className="text-red-400 font-semibold">{stock.change}%</span>
-                <span className="text-gray-400 text-sm">${stock.price}</span>
+                <span className="text-gray-400 text-sm">₹{stock.price}</span> 
               </div>
             ))}
           </div>
@@ -726,8 +726,9 @@ const App = () => {
                       <div className="text-xs text-gray-400">{asset.name}</div>
                       <div className="text-xs text-gray-500">{asset.sector}</div>
                     </td>
+                    // Line 595 के आसपास - Price column में
                     <td className="p-3">
-                      <div className="font-bold">${asset.price}</div>
+                      <div className="font-bold">₹{asset.price}</div>  {/* $ की जगह ₹ */}
                       <div className="text-xs text-gray-400">Vol: {asset.volume}</div>
                     </td>
                     <td className="p-3">
