@@ -300,18 +300,16 @@ const ICTAdvancedAnalyzer = () => {
     link.click();
   };
 
-  return (
-    <div
-      ref={mainRef}
-      className={`min-h-screen ${
-        darkMode
-            
-          ? "bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900"
-          : "bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100"
-      } text-white p-4 transition-all duration-300 ${
-        isFullscreen ? "p-0" : ""
-      }`}
-    >
+        <div
+        ref={mainRef}
+        className={`min-h-screen ${darkMode ? 'dark' : ''} ${
+            darkMode
+            ? "bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900"
+            : "bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100"
+        } text-white p-4 transition-all duration-300 ${
+            isFullscreen ? "p-0" : ""
+        }`}
+        >
       {/* NEW: Alert Banner */}
       {alerts.length > 0 && (
         <div className="mb-4 bg-yellow-900 bg-opacity-30 border border-yellow-700 rounded-lg p-3">
