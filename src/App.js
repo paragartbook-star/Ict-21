@@ -29,7 +29,7 @@ import {
   Minimize2,
 } from "lucide-react";
 
-const ICTAdvancedAnalyzer = () => {
+const App = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [selectedMarket, setSelectedMarket] = useState("Stocks");
   const [sortBy, setSortBy] = useState("Total Score");
@@ -300,16 +300,16 @@ const ICTAdvancedAnalyzer = () => {
     link.click();
   };
 
-        <div
-        ref={mainRef}
-        className={`min-h-screen ${darkMode ? 'dark' : ''} ${
-            darkMode
-            ? "bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900"
-            : "bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100"
-        } text-white p-4 transition-all duration-300 ${
-            isFullscreen ? "p-0" : ""
-        }`}
-        >
+            <div
+            ref={mainRef}
+            className={`min-h-screen ${darkMode ? 'dark' : ''} ${
+                darkMode
+                ? "bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900"
+                : "bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100"
+            } text-white p-4 transition-all duration-300 ${
+                isFullscreen ? "p-0" : ""
+            }`}
+            >
       {/* NEW: Alert Banner */}
       {alerts.length > 0 && (
         <div className="mb-4 bg-yellow-900 bg-opacity-30 border border-yellow-700 rounded-lg p-3">
@@ -1161,4 +1161,4 @@ const ICTAdvancedAnalyzer = () => {
   );
 };
 
-export default ICTAdvancedAnalyzer;
+export default App;
