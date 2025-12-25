@@ -29,26 +29,15 @@ import {
   Minimize2,
 } from "lucide-react";
 
-import React, { useState, useEffect } from 'react'; // 1. Check karein useEffect import hai
-
 const App = () => {
-
-  // Sirf ye hissa paste karein hooks ke turant baad (Line 54 ke paas)
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
-
+  // 1. Saari States ko upar rakhein
+  const [darkMode, setDarkMode] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [selectedMarket, setSelectedMarket] = useState("Stocks");
   const [sortBy, setSortBy] = useState("Total Score");
   const [expandedAsset, setExpandedAsset] = useState(null);
   const [watchlist, setWatchlist] = useState([]);
   const [alerts, setAlerts] = useState([]);
-  const [darkMode, setDarkMode] = useState(true);
   const [activeView, setActiveView] = useState("dashboard");
   const [selectedSector, setSelectedSector] = useState("All");
   const [riskFilter, setRiskFilter] = useState("All");
@@ -62,12 +51,42 @@ const App = () => {
     winRate: "76.2%",
     sharpeRatio: "2.1",
   });
+  
   const mainRef = useRef(null);
 
+  // 2. Dark Mode Toggle Logic
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  // 3. Clock Timer Logic
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
+
+  return (
+    <div className={darkMode ? "bg-slate-900 text-white min-h-screen" : "bg-gray-50 text-black min-h-screen"}>
+      {/* Yahan aapka baki ka saara dashboard code aayega */}
+      <div className="p-4">
+        <button 
+          onClick={() => setDarkMode(!darkMode)}
+          className="p-2 bg-blue-500 text-white rounded"
+        >
+          Toggle {darkMode ? 'Light' : 'Dark'} Mode
+        </button>
+        <h1 className="text-2xl mt-4">ICT Advanced Analyzer 2025</h1>
+        <p>Current Time: {currentTime.toLocaleTimeString()}</p>
+      </div>
+    </div>
+  );
+};
+
+export default App;
 
   // NEW: Simulate live price updates
   const [priceUpdates, setPriceUpdates] = useState({});
