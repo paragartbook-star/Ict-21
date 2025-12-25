@@ -532,8 +532,8 @@ const App = () => {
           </div>
         </div>
 
-        {/* Middle: Top Movers */}
-        <div className={`₹{darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
+              {/* Middle: Top Movers */}
+        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
           <h3 className="font-bold mb-3 flex items-center">
             <TrendingUp className="mr-2" /> Top Movers
           </h3>
@@ -551,7 +551,7 @@ const App = () => {
               <div key={idx} className="flex justify-between items-center py-1">
                 <span className="font-medium">{stock.symbol}</span>
                 <span className="text-red-400 font-semibold">{stock.change}%</span>
-                <span className="text-gray-400 text-sm">₹{stock.price}</span> 
+                <span className="text-gray-400 text-sm">₹{stock.price}</span>
               </div>
             ))}
           </div>
