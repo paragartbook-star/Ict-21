@@ -29,7 +29,16 @@ import {
   Minimize2,
 } from "lucide-react";
 
-import React, { useState, useEffect } from 'react'; // 1. Check karein useEffect import hai
+import React, { useState, useEffect, useRef } from "react";
+import {
+  TrendingUp,
+  TrendingDown,
+  // ... baaki icons
+} from "lucide-react";
+
+// Line 32 yahan khali honi chahiye
+const App = () => {
+   // ... baaki code
 
 const App = () => {
 
