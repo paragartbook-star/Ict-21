@@ -533,7 +533,7 @@ const App = () => {
         </div>
 
               {/* Middle: Top Movers */}
-        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
+        <div className={`₹{darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
           <h3 className="font-bold mb-3 flex items-center">
             <TrendingUp className="mr-2" /> Top Movers
           </h3>
