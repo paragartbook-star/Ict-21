@@ -248,13 +248,6 @@ const App = () => {
 
     return top21Stocks.map((stock, idx) => {
 
-            // 1. USD में आधार मूल्य की गणना
-      const basePrice_USD = 100 + idx * 50; 
-      
-      // 2. USD को INR (भारतीय रुपये) में बदलें (~85x विनिमय दर)
-      const basePrice_INR = basePrice_USD * 85; 
-      
-      // आप अब basePrice_INR का उपयोग कर सकते हैं, जो रुपये में है
 
       
       const priceChange = (Math.random() - 0.5) * 10;
