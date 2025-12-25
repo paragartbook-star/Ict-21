@@ -248,8 +248,7 @@ const App = () => {
 
     return top21Stocks.map((stock, idx) => {
 
-
-      
+      const basePrice = (100 + idx * 50) * 85;  // INR conversion
       const priceChange = (Math.random() - 0.5) * 10;
       const newPrice = basePrice + priceChange;
       const changePercent = ((priceChange / basePrice) * 100).toFixed(2);
