@@ -858,7 +858,7 @@ const App = () => {
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className={`₹{darkMode ? 'text-gray-400' : 'text-gray-600'} text-sm`}>
           <p>⚡ Live Data Updates Every 5 Seconds | 🧠 AI-Powered Analysis | 🎯 ICT Strategy Optimized</p>
-          <p className="mt-1">📊 {filteredAssets.length} assets filtered | ⭐ {watchlist.length} in watchlist</p>
+          <p className="mt-1"> {filteredAssets.length} Assets filtered | Design by ParagArtbook | ⭐ {watchlist.length} in watchlist</p>
         </div>
         
         <div className="flex items-center space-x-3">
