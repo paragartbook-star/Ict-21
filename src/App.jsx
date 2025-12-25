@@ -305,6 +305,7 @@ const ICTAdvancedAnalyzer = () => {
       ref={mainRef}
       className={`min-h-screen ${
         darkMode
+            
           ? "bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900"
           : "bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100"
       } text-white p-4 transition-all duration-300 ${
