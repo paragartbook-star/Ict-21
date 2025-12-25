@@ -40,10 +40,10 @@ const App = () => {
   // NEW: Generate sectors for filtering
   const sectors = ['All', 'AI/Semiconductors', 'Cloud/AI', 'FinTech', 'Biotech', 'Clean Energy', 'EV/Energy', 'Social/VR', 'Energy/Retail', 'Banking', 'Telecom', 'IT Services', 'NBFC', 'Engineering', 'Insurance', 'FMCG', 'FMCG/Cigarettes', 'Automobile', 'Pharma', 'Conglomerate', 'Power', 'Consumer Goods', 'Cement', 'Oil & Gas', 'Paints', 'Infrastructure', 'Mining', 'Financial Services', 'Defense', 'Steel', 'Capital Goods', 'Retail', 'Internet', 'Beverages', 'Cement/Textile', 'Finance', 'Real Estate', 'Aviation', 'Gas', 'Electricals', 'Chemicals', 'Metals', 'Renewable', 'Auto Parts', 'Explosives', 'Healthcare', 'Shipbuilding', 'IT', 'Textile', 'Blockchain', 'Smart Contract', 'Stablecoin', 'Payment', 'Exchange Token', 'Meme', 'Oracle', 'Interoperability', 'Exchange', 'L1 Blockchain', 'Layer 2', 'DEX', 'Web3', 'Privacy', 'Bitcoin L2', 'AI/DePIN', 'AI', 'Enterprise', 'Storage', 'Gaming', 'DeFi', 'Supply Chain', 'Web3 Indexing', 'Major', 'Minor', 'Exotic'];
 
-  // Simulated real-time data with 2025 features
+
   const generateAdvancedData = () => {
     const top21Stocks = [
-     // === TOP 100 INDIAN STOCKS (By Market Cap 2025) ===
+
       { symbol: 'RELIANCE', name: 'Reliance Industries', sector: 'Energy/Retail' },
       { symbol: 'HDFCBANK', name: 'HDFC Bank', sector: 'Banking' },
       { symbol: 'BHARTIARTL', name: 'Bharti Airtel', sector: 'Telecom' },
@@ -144,8 +144,6 @@ const App = () => {
       { symbol: 'YESBANK', name: 'Yes Bank', sector: 'Banking' },
       { symbol: 'IDFCFIRSTB', name: 'IDFC First Bank', sector: 'Banking' },
       { symbol: 'PAGEIND', name: 'Page Industries', sector: 'Textile' },
-    
-      // === TOP 50 CRYPTO CURRENCIES (By Market Cap) ===
       { symbol: 'BTC', name: 'Bitcoin', sector: 'Blockchain' },
       { symbol: 'ETH', name: 'Ethereum', sector: 'Smart Contract' },
       { symbol: 'USDT', name: 'Tether', sector: 'Stablecoin' },
@@ -196,8 +194,6 @@ const App = () => {
       { symbol: 'JUP', name: 'Jupiter', sector: 'DEX' },
       { symbol: 'BONK', name: 'Bonk', sector: 'Meme' },
       { symbol: 'PYTH', name: 'Pyth Network', sector: 'Oracle' },
-    
-      // === TOP 50 FOREX PAIRS ===
       { symbol: 'EUR/USD', name: 'Euro/US Dollar', sector: 'Major' },
       { symbol: 'USD/JPY', name: 'US Dollar/Yen', sector: 'Major' },
       { symbol: 'GBP/USD', name: 'British Pound/US Dollar', sector: 'Major' },
