@@ -808,7 +808,7 @@ const App = () => {
           <option>All Risk</option>
           <option>Low Risk (≤4)</option>
           <option>Medium Risk (4-6)</option>
-          <option>High Risk (>6)</option>
+          <option>High Risk (&gt;6)</option>
         </select>
 
         <select
@@ -831,7 +831,7 @@ const App = () => {
       {/* Enhanced Assets Table */}
       <div
         className={`${
-          darkMode ? "bg-gray-800 bg-opacity-50" : "bg-white"
+          darkMode ? "bg-gray-800 opacity-50" : "bg-white"
         } backdrop-blur-sm rounded-lg border ${
           darkMode ? "border-blue-500" : "border-blue-200"
         } overflow-hidden mb-6`}
