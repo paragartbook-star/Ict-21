@@ -317,7 +317,7 @@ const App = () => {
       if (Math.random() > 0.7) {
         const newAlert = {
           id: Date.now(),
-          message: `Price alert: ${assets[Math.floor(Math.random() * assets.length)].symbol} moved ${Math.random() > 0.5 ? 'up' : 'down'} ${(Math.random() * 5).toFixed(2)}%`,
+          message: `Price alert: ₹{assets[Math.floor(Math.random() * assets.length)].symbol} moved ₹{Math.random() > 0.5 ? 'up' : 'down'} ₹{(Math.random() * 5).toFixed(2)}%`,
           type: Math.random() > 0.5 ? 'info' : 'warning',
           time: new Date().toLocaleTimeString()
         };
@@ -388,12 +388,12 @@ const App = () => {
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `trading-data-${new Date().toISOString().split('T')[0]}.json`;
+    link.download = `trading-data-₹{new Date().toISOString().split('T')[0]}.json`;
     link.click();
   };
 
   return (
-    <div ref={mainRef} className={`min-h-screen ${darkMode ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900' : 'bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100'} text-white p-4 transition-all duration-300 ${isFullscreen ? 'p-0' : ''}`}>
+    <div ref={mainRef} className={`min-h-screen ₹{darkMode ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900' : 'bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100'} text-white p-4 transition-all duration-300 ₹{isFullscreen ? 'p-0' : ''}`}>
       
       {/* NEW: Alert Banner */}
       {alerts.length > 0 && (
@@ -411,22 +411,22 @@ const App = () => {
       )}
 
       {/* Enhanced Header */}
-      <div className={`mb-6 border-b ${darkMode ? 'border-blue-500' : 'border-blue-300'} pb-4`}>
+      <div className={`mb-6 border-b ₹{darkMode ? 'border-blue-500' : 'border-blue-300'} pb-4`}>
         <div className="flex items-center justify-between mb-4">
           <div>
             <h1 className={`text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent`}>
               Ecoplus Analyzer v.1169
             </h1>
-            <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            <p className={`text-sm mt-1 ₹{darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
               AI-Powered Trading Intelligence | Real-time Market Analysis | Institutional Grade Tools
             </p>
           </div>
           
           {/* NEW: Header Controls */}
           <div className="flex items-center space-x-4">
-            <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg px-4 py-2 border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
+            <div className={`₹{darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg px-4 py-2 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
               <div className="text-xl font-mono text-blue-400">{currentTime.toLocaleTimeString('en-IN')}</div>
-              <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+              <div className={`text-xs ₹{darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 {currentTime.toLocaleDateString('en-IN', { 
                   weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
                 })}
@@ -436,19 +436,19 @@ const App = () => {
             <div className="flex space-x-2">
               <button 
                 onClick={() => setDarkMode(!darkMode)}
-                className={`p-2 rounded-lg ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-100'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}
+                className={`p-2 rounded-lg ₹{darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-100'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}
               >
                 {darkMode ? '☀️' : '🌙'}
               </button>
               <button 
                 onClick={toggleFullscreen}
-                className={`p-2 rounded-lg ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-100'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}
+                className={`p-2 rounded-lg ₹{darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-100'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}
               >
                 {isFullscreen ? <Minimize2 className="w-5 h-5" /> : <Maximize2 className="w-5 h-5" />}
               </button>
               <button 
                 onClick={exportData}
-                className={`p-2 rounded-lg ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-100'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}
+                className={`p-2 rounded-lg ₹{darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-100'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}
               >
                 <Download className="w-5 h-5" />
               </button>
@@ -462,10 +462,10 @@ const App = () => {
             <button
               key={tab}
               onClick={() => setActiveView(tab)}
-              className={`px-4 py-2 rounded-lg font-medium capitalize ${
+              className={`px-4 py-2 rounded-lg font-medium capitalize ₹{
                 activeView === tab 
                   ? 'bg-blue-600 text-white' 
-                  : `${darkMode ? 'bg-gray-800 text-gray-300 hover:bg-gray-700' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`
+                  : `₹{darkMode ? 'bg-gray-800 text-gray-300 hover:bg-gray-700' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`
               }`}
             >
               {tab === 'dashboard' && '📊 '}
@@ -487,14 +487,14 @@ const App = () => {
             { label: 'Market Regime', value: marketStats.marketRegime, icon: Activity, color: 'red', change: 'Trending' },
             { label: 'Win Rate', value: performanceStats.winRate, icon: TrendingUp, color: 'green', change: '↑ 2.1%' }
           ].map((stat, idx) => (
-            <div key={idx} className={`${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-white'} backdrop-blur-sm border ${darkMode ? 'border-blue-500' : 'border-blue-200'} rounded-lg p-3`}>
+            <div key={idx} className={`₹{darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-white'} backdrop-blur-sm border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'} rounded-lg p-3`}>
               <div className="flex items-center justify-between mb-1">
-                <stat.icon className={`w-4 h-4 text-${stat.color}-400`} />
-                <span className={`text-xs font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{stat.label}</span>
+                <stat.icon className={`w-4 h-4 text-₹{stat.color}-400`} />
+                <span className={`text-xs font-semibold ₹{darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{stat.label}</span>
               </div>
               <div className="flex items-end justify-between">
                 <div className="text-lg font-bold">{stat.value}</div>
-                <span className={`text-xs ${stat.change.includes('+') || stat.change.includes('↑') ? 'text-green-400' : 'text-red-400'}`}>
+                <span className={`text-xs ₹{stat.change.includes('+') || stat.change.includes('↑') ? 'text-green-400' : 'text-red-400'}`}>
                   {stat.change}
                 </span>
               </div>
@@ -506,14 +506,14 @@ const App = () => {
       {/* NEW: Market Sentiment Dashboard */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
         {/* Left: Market Overview */}
-        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
+        <div className={`₹{darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
           <h3 className="font-bold mb-3 flex items-center">
             <Globe className="mr-2" /> Market Overview
           </h3>
           <div className="space-y-3">
             <div className="flex justify-between items-center">
               <span className={darkMode ? 'text-gray-300' : 'text-gray-700'}>Overall Sentiment</span>
-              <span className={`px-2 py-1 rounded text-sm ${marketSentiment.overall === 'Bullish' ? 'bg-green-600' : 'bg-red-600'}`}>
+              <span className={`px-2 py-1 rounded text-sm ₹{marketSentiment.overall === 'Bullish' ? 'bg-green-600' : 'bg-red-600'}`}>
                 {marketSentiment.overall}
               </span>
             </div>
@@ -533,7 +533,7 @@ const App = () => {
         </div>
 
         {/* Middle: Top Movers */}
-        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
+        <div className={`₹{darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
           <h3 className="font-bold mb-3 flex items-center">
             <TrendingUp className="mr-2" /> Top Movers
           </h3>
@@ -543,7 +543,7 @@ const App = () => {
               <div key={idx} className="flex justify-between items-center py-1">
                 <span className="font-medium">{stock.symbol}</span>
                 <span className="text-green-400 font-semibold">+{stock.change}%</span>
-                <span className="text-gray-400 text-sm">${stock.price}</span>
+                <span className="text-gray-400 text-sm">₹{stock.price}</span>
               </div>
             ))}
             <div className="text-sm font-semibold text-gray-400 mt-3 mb-1">Top Losers</div>
@@ -558,7 +558,7 @@ const App = () => {
         </div>
 
         {/* Right: Performance */}
-        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
+        <div className={`₹{darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
           <h3 className="font-bold mb-3 flex items-center">
             <ChartLine className="mr-2" /> Your Performance
           </h3>
@@ -584,7 +584,7 @@ const App = () => {
       </div>
 
       {/* Enhanced Kill Zones */}
-      <div className={`mb-6 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-white'} backdrop-blur-sm rounded-lg p-4 border ${darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
+      <div className={`mb-6 ₹{darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-white'} backdrop-blur-sm rounded-lg p-4 border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'}`}>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold flex items-center">
             <Clock className="mr-2" /> Trading Sessions (Kill Zones)
@@ -592,24 +592,24 @@ const App = () => {
           <div className="flex items-center space-x-2">
             <button 
               onClick={() => setAutoRefresh(!autoRefresh)}
-              className={`p-2 rounded ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'} ${autoRefresh ? 'text-green-400' : 'text-gray-400'}`}
+              className={`p-2 rounded ₹{darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'} ₹{autoRefresh ? 'text-green-400' : 'text-gray-400'}`}
             >
-              <RefreshCw className={`w-4 h-4 ${autoRefresh ? 'animate-spin' : ''}`} />
+              <RefreshCw className={`w-4 h-4 ₹{autoRefresh ? 'animate-spin' : ''}`} />
             </button>
             <span className="text-xs text-gray-400">Auto-refresh: {autoRefresh ? 'ON' : 'OFF'}</span>
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {sessions.map((session, idx) => (
-            <div key={idx} className={`p-3 rounded-lg border-2 ${session.active ? 'border-green-500 bg-green-900 bg-opacity-30' : 'border-gray-600 bg-gray-700 bg-opacity-30'}`}>
+            <div key={idx} className={`p-3 rounded-lg border-2 ₹{session.active ? 'border-green-500 bg-green-900 bg-opacity-30' : 'border-gray-600 bg-gray-700 bg-opacity-30'}`}>
               <div className="flex items-center justify-between mb-2">
                 <div>
                   <span className="font-bold">{session.name}</span>
                   <div className="flex items-center mt-1">
-                    <span className={`text-xs px-2 py-0.5 rounded mr-2 ${session.active ? 'bg-green-500' : 'bg-gray-600'}`}>
+                    <span className={`text-xs px-2 py-0.5 rounded mr-2 ₹{session.active ? 'bg-green-500' : 'bg-gray-600'}`}>
                       {session.active ? 'ACTIVE' : 'CLOSED'}
                     </span>
-                    <span className={`text-xs ${session.volatility === 'High' ? 'text-red-400' : 'text-yellow-400'}`}>
+                    <span className={`text-xs ₹{session.volatility === 'High' ? 'text-red-400' : 'text-yellow-400'}`}>
                       ⚡ {session.volatility}
                     </span>
                   </div>
@@ -639,7 +639,7 @@ const App = () => {
             placeholder="Search symbols or companies..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className={`w-full pl-10 pr-4 py-2 rounded-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+            className={`w-full pl-10 pr-4 py-2 rounded-lg ₹{darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />
         </div>
 
@@ -647,7 +647,7 @@ const App = () => {
         <select 
           value={selectedMarket}
           onChange={(e) => setSelectedMarket(e.target.value)}
-          className={`px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          className={`px-4 py-2 rounded-lg ₹{darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
         >
           <option>Stocks</option>
           <option>Crypto</option>
@@ -659,7 +659,7 @@ const App = () => {
         <select 
           value={selectedSector}
           onChange={(e) => setSelectedSector(e.target.value)}
-          className={`px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          className={`px-4 py-2 rounded-lg ₹{darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
         >
           {sectors.map(sector => (
             <option key={sector} value={sector}>{sector}</option>
@@ -669,7 +669,7 @@ const App = () => {
         <select 
           value={riskFilter}
           onChange={(e) => setRiskFilter(e.target.value)}
-          className={`px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          className={`px-4 py-2 rounded-lg ₹{darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
         >
           <option>All Risk</option>
           <option>Low Risk (≤4)</option>
@@ -680,7 +680,7 @@ const App = () => {
         <select 
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className={`px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          className={`px-4 py-2 rounded-lg ₹{darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
         >
           <option>Total Score</option>
           <option>AI Score</option>
@@ -691,10 +691,10 @@ const App = () => {
       </div>
 
       {/* Enhanced Assets Table */}
-      <div className={`${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-white'} backdrop-blur-sm rounded-lg border ${darkMode ? 'border-blue-500' : 'border-blue-200'} overflow-hidden mb-6`}>
+      <div className={`₹{darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-white'} backdrop-blur-sm rounded-lg border ₹{darkMode ? 'border-blue-500' : 'border-blue-200'} overflow-hidden mb-6`}>
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className={`${darkMode ? 'bg-blue-900 bg-opacity-50' : 'bg-blue-50'}`}>
+            <thead className={`₹{darkMode ? 'bg-blue-900 bg-opacity-50' : 'bg-blue-50'}`}>
               <tr>
                 <th className="p-3 text-left">Rank</th>
                 <th className="p-3 text-left">Symbol</th>
@@ -711,9 +711,9 @@ const App = () => {
             <tbody>
               {filteredAssets.map((asset, idx) => (
                 <React.Fragment key={idx}>
-                  <tr className={`border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'} hover:${darkMode ? 'bg-gray-700' : 'bg-gray-50'} hover:bg-opacity-50 transition-colors ${idx < 7 ? (darkMode ? 'bg-green-900 bg-opacity-20' : 'bg-green-50') : ''}`}>
+                  <tr className={`border-b ₹{darkMode ? 'border-gray-700' : 'border-gray-200'} hover:₹{darkMode ? 'bg-gray-700' : 'bg-gray-50'} hover:bg-opacity-50 transition-colors ₹{idx < 7 ? (darkMode ? 'bg-green-900 bg-opacity-20' : 'bg-green-50') : ''}`}>
                     <td className="p-3">
-                      <span className={`font-bold ${idx < 3 ? 'text-yellow-400' : idx < 7 ? 'text-green-400' : ''}`}>
+                      <span className={`font-bold ₹{idx < 3 ? 'text-yellow-400' : idx < 7 ? 'text-green-400' : ''}`}>
                         #{asset.rank}
                       </span>
                     </td>
@@ -723,11 +723,11 @@ const App = () => {
                       <div className="text-xs text-gray-500">{asset.sector}</div>
                     </td>
                     <td className="p-3">
-                      <div className="font-bold">₹{asset.price}</div>  {/* $ की जगह ₹ */}
+                      <div className="font-bold">₹{asset.price}</div>  {/* ₹ की जगह ₹ */}
                       <div className="text-xs text-gray-400">Vol: {asset.volume}</div>
                     </td>
                     <td className="p-3">
-                      <div className={`font-bold ${parseFloat(asset.change) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                      <div className={`font-bold ₹{parseFloat(asset.change) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                         {parseFloat(asset.change) >= 0 ? '+' : ''}{asset.change}%
                       </div>
                     </td>
@@ -741,7 +741,7 @@ const App = () => {
                       </div>
                     </td>
                     <td className="p-3">
-                      <span className={`px-2 py-1 rounded text-xs font-semibold ${
+                      <span className={`px-2 py-1 rounded text-xs font-semibold ₹{
                         asset.signal.includes('STRONG') ? 'bg-green-600' : 
                         asset.signal.includes('BUY') ? 'bg-green-700' : 'bg-yellow-600'
                       }`}>
@@ -750,16 +750,16 @@ const App = () => {
                     </td>
                     <td className="p-3">
                       <div className="flex items-center">
-                        <span className={`font-semibold ${parseFloat(asset.riskScore) < 4 ? 'text-green-400' : parseFloat(asset.riskScore) < 6 ? 'text-yellow-400' : 'text-red-400'}`}>
+                        <span className={`font-semibold ₹{parseFloat(asset.riskScore) < 4 ? 'text-green-400' : parseFloat(asset.riskScore) < 6 ? 'text-yellow-400' : 'text-red-400'}`}>
                           {asset.riskScore}/10
                         </span>
-                        <Shield className={`w-4 h-4 ml-1 ${parseFloat(asset.riskScore) < 4 ? 'text-green-400' : 'text-red-400'}`} />
+                        <Shield className={`w-4 h-4 ml-1 ₹{parseFloat(asset.riskScore) < 4 ? 'text-green-400' : 'text-red-400'}`} />
                       </div>
                     </td>
                     <td className="p-3">
                       <button
                         onClick={() => toggleWatchlist(asset.symbol)}
-                        className={`p-2 rounded ${watchlist.includes(asset.symbol) ? 'text-yellow-400 bg-yellow-900 bg-opacity-30' : 'text-gray-400 hover:text-yellow-400'}`}
+                        className={`p-2 rounded ₹{watchlist.includes(asset.symbol) ? 'text-yellow-400 bg-yellow-900 bg-opacity-30' : 'text-gray-400 hover:text-yellow-400'}`}
                       >
                         {watchlist.includes(asset.symbol) ? '★' : '☆'}
                       </button>
@@ -811,7 +811,7 @@ const App = () => {
                               </div>
                               <div className="flex justify-between">
                                 <span className="text-gray-400">Whale Activity:</span>
-                                <span className={`font-semibold ${asset.whaleActivity === 'Detected' ? 'text-yellow-400' : 'text-gray-400'}`}>
+                                <span className={`font-semibold ₹{asset.whaleActivity === 'Detected' ? 'text-yellow-400' : 'text-gray-400'}`}>
                                   {asset.whaleActivity}
                                 </span>
                               </div>
@@ -855,7 +855,7 @@ const App = () => {
 
       {/* NEW: Quick Actions & Footer */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-sm`}>
+        <div className={`₹{darkMode ? 'text-gray-400' : 'text-gray-600'} text-sm`}>
           <p>⚡ Live Data Updates Every 5 Seconds | 🧠 AI-Powered Analysis | 🎯 ICT Strategy Optimized</p>
           <p className="mt-1">📊 {filteredAssets.length} assets filtered | ⭐ {watchlist.length} in watchlist</p>
         </div>
@@ -863,7 +863,7 @@ const App = () => {
         <div className="flex items-center space-x-3">
           <button 
             onClick={() => setAssets(generateAdvancedData())}
-            className={`px-4 py-2 rounded-lg ${darkMode ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-medium flex items-center`}
+            className={`px-4 py-2 rounded-lg ₹{darkMode ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-medium flex items-center`}
           >
             <RefreshCw className="w-4 h-4 mr-2" /> Refresh Data
           </button>
